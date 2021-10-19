@@ -2,11 +2,12 @@
   <div>
       <md-card>
     <h1>Détail du restaurant {{ id }}</h1>
-    <h3>Nom du Restaurant : {{ name }}</h3>
-    <h3>Cuisine : {{ cuisine }}</h3>
-    <h3>Ville : </h3>
+    <h3>Nom du Restaurant : {{ restaurant.name }}</h3>
+    <h3>Cuisine : {{ restaurant.cuisine }}</h3>
+    <h3>Ville : {{ restaurant.borough }} </h3>
+    <h3>Adresse : {{ restaurant.address.building }} {{ restaurant.address.street }} </h3>
     <h3>Photo du restaurant: </h3>
-    <h3>Notation : </h3>
+    <h3>Notation : {{ restaurant.grades }} </h3>
     <h3>Emplacement Maps : </h3>
       </md-card>
   </div>
@@ -29,7 +30,7 @@ export default {
   },
   mounted() {
       console.log("ID : " + this.id)
-      let url = "http://localhost:8081/api/restaurants/" + this.id;
+      let url = "http://localhost:8080/api/restaurants/" + this.id;
       fetch(url)
       .then(reponse => {
           return reponse.json();

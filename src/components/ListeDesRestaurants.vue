@@ -9,7 +9,7 @@
             Cuisine : <input name="cuisine" type="text" required v-model="cuisine">
         </label>
 
-        <button class="md-raised btn1">Ajouter<button>
+        <button class="md-raised" >Ajouter</button>
     </form>
 
     <h1>Nombre de restaurants : {{nbRestaurantsTotal}}</h1>
@@ -145,6 +145,8 @@ export default {
         // Récupération du formulaire. Pas besoin de document.querySelector
         // ou document.getElementById puisque c'est le formulaire qui a généré
         // l'événement
+        console.log('hello')
+        console.log(event);
         let form = event.target;
 
         // Récupération des valeurs des champs du formulaire
