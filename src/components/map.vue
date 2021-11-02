@@ -23,7 +23,7 @@
 <script>
 import { LMap, LTileLayer } from 'vue2-leaflet';
 import Restau from './restau'
-// import Restaurant from './Restaurant';
+
 import 'leaflet/dist/leaflet.css'
 export default {
   components: {
@@ -34,14 +34,11 @@ export default {
   data () {
     return {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      center: [ 49.1193089, 6.1757156 ],
+      center: [ 40.75637123,-73.98545321 ],
       zoom: 12,
       markers: [
-         {id: 1, imageUrl: 'https://img.icons8.com/doodle/48/000000/fish-food--v1.png', coordinates: [ this.restaurant.address.coord[0], this.restaurant.address.coord[1] ]},
-        // {id: 2, imageUrl: 'https://img.icons8.com/doodle/48/000000/pizza--v1.png' ,coordinates: [ 49.133290, 6.154370 ]},
-        // {id: 3, imageUrl: 'https://img.icons8.com/doodle/48/000000/croissant--v1.png', coordinates: [ 49.102160, 6.158850 ]},
-        // {id: 4, imageUrl: 'https://img.icons8.com/doodle/48/000000/the-toast--v2.png', coordinates: [ 49.136010, 6.199630 ]},
-        // {id: 5, imageUrl: 'https://img.icons8.com/doodle/48/000000/hamburger.png', coordinates: [ 49.105563, 6.182234 ]},
+         {id: 1, imageUrl: 'https://img.icons8.com/ios-filled/50/000000/restaurant.png', coordinates: [ 40.7676919, -73.98513559999999]},
+        
       ]
     }
   },
@@ -52,23 +49,7 @@ export default {
     centerUpdated (center) {
       this.center = center;
     },
-     data: function() {
-      return {
-          restaurant: null
-      }
-  },
-     mounted() {
-      console.log("ID : " + this.id)
-    
-      let url = "http://localhost:8080/api/restaurants/" + this.id;
-      fetch(url)
-      .then(reponse => {
-          return reponse.json();
-      }).then(data => {
-          this.restaurant = data.restaurant;
-            console.log(data.restaurant)
-      })   
-  },
+
   }
 }
 </script>
