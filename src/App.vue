@@ -18,8 +18,8 @@ export default {
 
 <style>
 #app {
-  background: fixed url(https://www.wallpaperbetter.com/wallpaper/63/966/426/vintage-restaurant-1080P-wallpaper.jpg);
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /*background: fixed url(https://www.wallpaperbetter.com/wallpaper/63/966/426/vintage-restaurant-1080P-wallpaper.jpg);
+ */ font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;

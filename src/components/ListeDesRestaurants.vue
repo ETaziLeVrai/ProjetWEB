@@ -50,7 +50,8 @@
             <md-table-cell md-label="Cuisine" md-sort-by="cuisine"> {{item.cuisine}}</md-table-cell>
             <md-table-cell md-label="Ville" md-sort-by="borough"> {{item.borough}}</md-table-cell>
             <md-table-cell md-label="Détail"> <router-link :to="'/Restaurant/' + item._id">[Détail d'un restaurant]</router-link> </md-table-cell>
-            <md-table-cell md-label="Supprimer"> <md-button class="md-raised" @click="supprimerRestaurant(item)">Supprimer le restaurant</md-button> </md-table-cell>
+           <md-table-cell md-label="Supprimer"> <a href="#" @click="supprimerRestaurant(item)"><md-icon>	delete</md-icon>  </a></md-table-cell>
+        
         </md-table-row>
     </md-table>
     
@@ -145,8 +146,7 @@ export default {
         // Récupération du formulaire. Pas besoin de document.querySelector
         // ou document.getElementById puisque c'est le formulaire qui a généré
         // l'événement
-        console.log('hello')
-        console.log(event);
+   
         let form = event.target;
 
         // Récupération des valeurs des champs du formulaire

@@ -8,20 +8,31 @@
     <h3>Adresse : {{ restaurant.address.building }} {{ restaurant.address.street }} </h3>
     <h3>Photo du restaurant: </h3>
     <h3>Notation : {{ restaurant.grades }} </h3>
-    <h3>Emplacement Maps : </h3>
+    <h3>Emplacement Maps : {{restaurant.address.coord[0]}} </h3>
+   
+    <div id="app">
+    <Map/>
+  </div>
       </md-card>
   </div>
 </template>
 
 <script>
+import Map from './map';
+
 export default {
   name: 'Restaurant',
+  components: {
+   Map
+ },
   props: {
   },
   computed: {
       id() {
+          console.log(this.$route.params.r);
           return this.$route.params.r
-      }
+      },
+ 
   },
   data: function() {
       return {
@@ -38,8 +49,12 @@ export default {
           this.restaurant = data.restaurant;
       })   
   },
+  
+  
   methods : {
-  }
+
+  },
+  
 }
 </script>
 
