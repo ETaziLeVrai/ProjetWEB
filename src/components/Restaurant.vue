@@ -6,9 +6,10 @@
     <h3>Cuisine : {{ restaurant.cuisine }}</h3>
     <h3>Ville : {{ restaurant.borough }} </h3>
     <h3>Adresse : {{ restaurant.address.building }} {{ restaurant.address.street }} </h3>
-    <h3>Photo du restaurant: </h3>
+    <h3>Photo du restaurant: <img src="https://source.unsplash.com/featured/?restaurant"> </h3>
     <h3>Notation : {{ restaurant.grades }} </h3>
     <h3>Emplacement Maps : {{restaurant.address.coord[0]}} </h3>
+
    
     <div id="app">
     <Map :adress = 'restaurant.address' />
