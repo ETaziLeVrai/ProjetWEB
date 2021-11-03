@@ -11,7 +11,7 @@
     <h3>Emplacement Maps : {{restaurant.address.coord[0]}} </h3>
    
     <div id="app">
-    <Map/>
+    <Map :adress = 'restaurant.address' />
   </div>
       </md-card>
   </div>

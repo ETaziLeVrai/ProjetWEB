@@ -31,13 +31,14 @@ export default {
     LTileLayer,
     Restau
   },
+  props: ['adress'],
   data () {
     return {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      center: [ 40.75637123,-73.98545321 ],
+      center: [ this.adress.coord[1], this.adress.coord[0] ],
       zoom: 12,
       markers: [
-         {id: 1, imageUrl: 'https://img.icons8.com/ios-filled/50/000000/restaurant.png', coordinates: [ 40.7676919, -73.98513559999999]},
+         {id: 1, imageUrl: 'https://img.icons8.com/ios-filled/50/000000/restaurant.png', coordinates: [ this.adress.coord[1], this.adress.coord[0]]},
         
       ]
     }
