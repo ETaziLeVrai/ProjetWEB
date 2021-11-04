@@ -57,14 +57,12 @@ export default {
       .then(reponse => {
           return reponse.json();
       }).then(data => {
-          this.restaurant = data.restaurant;
-            for( var i = 0; i < this.restaurant.grades.length; i++ ){
-        this.sum += parseInt( this.restaurant.grades[i].score, 10 ); 
-    }
+        this.restaurant = data.restaurant;
+        for( var i = 0; i < this.restaurant.grades.length; i++ ){
+            this.sum += parseInt( this.restaurant.grades[i].score, 10 ); 
+        }
         this.result =this.sum/this.restaurant.grades.length;
       })
-     
-      this.average();
   },
   
   
