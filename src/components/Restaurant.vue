@@ -9,7 +9,7 @@
     <p>Cuisine : {{ restaurant.cuisine }}</p>
     <p> Ville : {{ restaurant.borough }} </p>
     <p><md-icon>location_on</md-icon>Adresse : {{ restaurant.address.building }} {{ restaurant.address.street }} </p>
-    <p>Notation : {{ restaurant.grades }} </p>
+    <p> Notation : {{result}} </p>
     
      </md-card-content>
      </md-card>
@@ -28,6 +28,12 @@
 <script>
 import Map from './map';
 import RestaurantImage from './RestaurantImage';
+this.sum = 0;
+this.result = 0;
+    for( var i = 0; i < this.restaurant.grades.length; i++ ){
+        this.sum += parseInt( this.restaurant.grades.score[i], 10 ); 
+    }
+ this.result =this.sum/this.restaurant.grades.length;
 
 export default {
   name: 'Restaurant',
@@ -46,9 +52,14 @@ export default {
   },
   data: function() {
       return {
-          restaurant: null
+          restaurant: null,
+          sum: null,
+          resultat: null,
+          
+          
       }
   },
+  
   mounted() {
       console.log("ID : " + this.id)
       let url = "http://localhost:8080/api/restaurants/" + this.id;
