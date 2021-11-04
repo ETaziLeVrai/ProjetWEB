@@ -63,15 +63,6 @@ export default {
     }
         this.result =this.sum/this.restaurant.grades.length;
       })
-      let imgUrl = "https://api.unsplash.com/photos/random/?client_id=PnvDciioIsipuy-DFRWQQmZSP3B18rVjbLRqSmqiknw&page=1&query=restaurant";
-      let imgElement = document.querySelector("#unsplashImg");
-      let imgLink = document.querySelector("#linkImg");
-      fetch(imgUrl)
-      .then((response) => response.json())
-      .then((jsonData) => {
-          imgElement.src = jsonData.urls.regular;
-          imgLink.setAttribute("href", jsonData.links.html)
-      })
      
       this.average();
   },
