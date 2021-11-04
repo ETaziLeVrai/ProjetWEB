@@ -1,22 +1,28 @@
 <template>
   <div>
-      <md-card>
-    <h1>Détail du restaurant {{ id }}</h1>
-    <h3>Nom du Restaurant : {{ restaurant.name }}</h3>
-    <h3>Cuisine : {{ restaurant.cuisine }}</h3>
-    <h3>Ville : {{ restaurant.borough }} </h3>
-    <h3>Adresse : {{ restaurant.address.building }} {{ restaurant.address.street }} </h3>
-    <h3>Photo du restaurant: </h3>
-    <RestaurantImage />
-    <h3>Notation : {{ restaurant.grades }} </h3>
-    <h3>Emplacement Maps : {{restaurant.address.coord[0]}} </h3>
-
+      <md-card  >
+    <md-card-content>
+    <p id="title">{{ restaurant.name }}</p>
    
-    <div id="app">
+   <RestaurantImage /> 
+ 
+    <p>Cuisine : {{ restaurant.cuisine }}</p>
+    <p> Ville : {{ restaurant.borough }} </p>
+    <p><md-icon>location_on</md-icon>Adresse : {{ restaurant.address.building }} {{ restaurant.address.street }} </p>
+    <p>Notation : {{ restaurant.grades }} </p>
+    
+     </md-card-content>
+     </md-card>
+       <md-card >
+        <md-card-content>
+          <div id="app">
     <Map :adress = 'restaurant.address' />
   </div>
-      </md-card>
+   </md-card-content>
+   </md-card>
+      
   </div>
+  
 </template>
 
 <script>
@@ -72,5 +78,14 @@ export default {
 </script>
 
 <style>
+#title {
+    font: italic 1.2em "Fira Sans", serif;
+    text-align: center;
+    font-size:25px;
+}
+p {
+    margin-left: 25px;
+     font: italic 1.2em "Fira Sans", serif;
+}
 
 </style>

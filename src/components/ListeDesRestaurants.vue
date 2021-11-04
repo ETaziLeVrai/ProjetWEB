@@ -1,6 +1,8 @@
 <template>
   <div>
-    <md-card>
+   <img style="width:80%; height:650px" id="image" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" />
+    <md-card flex="50" >
+    <md-card-content>
     <form @submit.prevent="ajouterRestaurant($event)">
         <label>
             Nom : <input name="nom" type="text" required v-model="nom">
@@ -9,7 +11,7 @@
             Cuisine : <input name="cuisine" type="text" required v-model="cuisine">
         </label>
 
-        <button class="md-raised" >Ajouter</button>
+        <button class="button" >Ajouter</button>
     </form>
 
     <h1>Nombre de restaurants : {{nbRestaurantsTotal}}</h1>
@@ -34,6 +36,7 @@
       md-confirm-text="Ok" />
 
     <br>
+    </md-card-content>
     </md-card>
 
     <md-table v-model="restaurants" md-sort="name" md-sort-order="asc" md-card>
@@ -125,6 +128,7 @@ export default {
       }, 300),
       supprimerRestaurant(r) {
         let url = "http://localhost:8080/api/restaurants/" + r._id;
+ if(confirm("Do you really want to delete?")){
 
         fetch(url, {
             method: "DELETE",
@@ -141,6 +145,7 @@ export default {
             .catch(function (err) {
               console.log(err);
             });
+}
       },
       ajouterRestaurant(event) {
         // Récupération du formulaire. Pas besoin de document.querySelector
@@ -184,10 +189,31 @@ export default {
 
 
 <style>
+
 .md-card {
-    width: 80%;
+    width: 90%;
     margin: 2%;
     display: inline-block;
     vertical-align: top;
+    
   }
+  .md-card-content {
+
+  }
+  .button {
+  background-color: #fff; 
+  border: none;
+  padding:8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 30px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+  
 </style>

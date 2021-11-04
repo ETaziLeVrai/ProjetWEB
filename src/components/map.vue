@@ -58,8 +58,14 @@ export default {
 <style>
   .map {
     position: absolute;
-    width: 100%;
-    height: 100%;
+ height: 600px !important;
+width: 80% !important;
+margin-left: auto !important ;
+    margin-right: auto !important;
     overflow :hidden
   }
+  .my-leaflet-map-container img {
+    max-height: none;
+}
+
 </style>

@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <md-tabs class="md-primary" md-alignment="centered">
-      <md-tab id="tab-home" md-label="Home" to="/"></md-tab>
-      <md-tab id="tab-pages" md-label="Restaurant" to="/Restaurant"></md-tab>
+    <md-tabs  md-alignment="centered" >
+      <md-tab  id="tab-home" md-label="Home" to="/"></md-tab>
+    <md-tab id="tab-pages" md-label="Restaurant" to="/Restaurant"></md-tab>
     </md-tabs>
-    <router-view></router-view>
+    <br>
+   
+    <router-view></router-view> 
   </div>
-</template>
 
+  
+</template>
 <script>
 export default {
   name: 'App',
   components: {
   }
 }
+
 </script>
 
 <style>
@@ -23,15 +27,28 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
-  color: #2c3e50;
+  /*color: #2c3e50;*/
 }
 .md-tabs {
-  margin-bottom: 24px;
+  margin-bottom: 0px;
+ 
+}
+.md-tabs.md-theme-default.md-primary .md-tabs-navigation {
+    background-color: #000000;
 }
 .md-table {
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 2%;
+  
 }
+#image{
+  width: 70%;
+    height: 500px;
+     display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 </style>
