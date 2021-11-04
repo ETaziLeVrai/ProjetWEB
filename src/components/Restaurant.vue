@@ -50,8 +50,8 @@ export default {
   data: function() {
       return {
           restaurant: null,
-          sum: 0,
-          result: 0,
+          sum: null,
+          result: null,
           
       }
   },
@@ -64,6 +64,10 @@ export default {
           return reponse.json();
       }).then(data => {
           this.restaurant = data.restaurant;
+            for( var i = 0; i < this.restaurant.grades.length; i++ ){
+        this.sum += parseInt( this.restaurant.grades[i].score, 10 ); 
+    }
+        this.result =this.sum/this.restaurant.grades.length;
       })
       let imgUrl = "https://api.unsplash.com/photos/random/?client_id=PnvDciioIsipuy-DFRWQQmZSP3B18rVjbLRqSmqiknw&page=1&query=restaurant";
       let imgElement = document.querySelector("#unsplashImg");
@@ -74,22 +78,14 @@ export default {
           imgElement.src = jsonData.urls.regular;
           imgLink.setAttribute("href", jsonData.links.html)
       })
+     
       this.average();
   },
   
   
   methods : {
-      average (){
-            for( var i = 0; i < this.restaurant.grades.length; i++ ){
-        this.sum += parseInt( this.restaurant.grades.score[i], 10 ); 
-    }
- this.result =this.sum/this.restaurant.grades.length;
- console.log(this.restaurant.grades)
-      }
-
+ 
   },
-
-  
 }
   
 </script>
