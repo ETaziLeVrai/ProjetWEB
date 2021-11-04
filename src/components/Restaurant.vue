@@ -9,7 +9,7 @@
     <p>Cuisine : {{ restaurant.cuisine }}</p>
     <p> Ville : {{ restaurant.borough }} </p>
     <p><md-icon>location_on</md-icon>Adresse : {{ restaurant.address.building }} {{ restaurant.address.street }} </p>
-    <p> Notation : {{result}} </p>
+    <p> Notation : {{this.result}} </p>
     
      </md-card-content>
      </md-card>
@@ -28,12 +28,9 @@
 <script>
 import Map from './map';
 import RestaurantImage from './RestaurantImage';
-this.sum = 0;
-this.result = 0;
-    for( var i = 0; i < this.restaurant.grades.length; i++ ){
-        this.sum += parseInt( this.restaurant.grades.score[i], 10 ); 
-    }
- this.result =this.sum/this.restaurant.grades.length;
+
+
+
 
 export default {
   name: 'Restaurant',
@@ -53,9 +50,8 @@ export default {
   data: function() {
       return {
           restaurant: null,
-          sum: null,
-          resultat: null,
-          
+          sum: 0,
+          result: 0,
           
       }
   },
@@ -78,14 +74,24 @@ export default {
           imgElement.src = jsonData.urls.regular;
           imgLink.setAttribute("href", jsonData.links.html)
       })
+      this.average();
   },
   
   
   methods : {
+      average (){
+            for( var i = 0; i < this.restaurant.grades.length; i++ ){
+        this.sum += parseInt( this.restaurant.grades.score[i], 10 ); 
+    }
+ this.result =this.sum/this.restaurant.grades.length;
+ console.log(this.restaurant.grades)
+      }
 
   },
+
   
 }
+  
 </script>
 
 <style>
