@@ -16,13 +16,13 @@ Material UI
 MongoDB
 
 ## Démarrer le projet :
-Il faut tout d'abord lancer le serveur avec la commande 
+Il faut tout d'abord lancer le serveur avec la commande :
 ```bash
 node serverCrudWithMongo.js
 ```
 Le serveur doit utiliser le port 8080. Dans  ce serveur  des données sont situées dans MongoDb, via des WebServices.
 
-Ensuite connecter le client avec la commande 
+Ensuite connecter le client avec la commande :
 ```bash
 npm run serve
 ```
