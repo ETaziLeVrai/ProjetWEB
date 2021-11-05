@@ -1,6 +1,7 @@
 # ProjetWEB
 Projet Javascript M1 Miage
 
+Lien vers la vidéo du projet : https://youtu.be/duklb91UYgQ
 
 Ce mini projet a pour but de gérér une liste des restaurants. Chaque restaurant possède un nom, 
 un type de cuisine, une adresse, une notation.
