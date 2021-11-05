@@ -29,13 +29,14 @@ Ensuite connecter le client avec la commande :
 npm run serve
 ```
 
-il faut également lancer Mongodb. Pour s'assurer que tout fonctionne correctement on lance la commande : 
+Il faut également lancer Mongodb. Pour s'assurer que tout fonctionne correctement on lance la commande : 
 
 ```bash
 mongod
 ```
 
 On peut aussi lancer MongoDBCompass, se connecter sur MongoDB, ouvrir la collection "restaurants" dans la base "test"
+
 
 
 Afin de pouvoir présenter la position de chaque restaurant sur une Map, nous avons utilisé Leaflet qui est un framework javascript.
