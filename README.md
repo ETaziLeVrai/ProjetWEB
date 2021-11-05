@@ -2,15 +2,17 @@
 Projet Javascript M1 Miage
 
 
-Ce mini projet a pour but de gérér une liste des restaurants. Chaque restaurant possède un Nom, 
-un type de Cuisine, une adresse, une notation.
+Ce mini projet a pour but de gérér une liste des restaurants. Chaque restaurant possède un om, 
+un type de cuisine, une adresse, une notation.
 
 Nous pouvons faire une recherche par nom sur les restaurants,
-ajouter un nouveau restaurant,modifier, supprimer un restaurant de la liste.
+ajouter un nouveau restaurant, modifier, supprimer un restaurant de la liste.
 
 ## Technologies utilisées : 
-Vuejs.
+Vuejs
+
 Material UI
+
 MongoDB
 
 ## Démarrer le projet :
