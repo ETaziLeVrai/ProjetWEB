@@ -15,6 +15,8 @@ Material UI
 
 MongoDB
 
+Leaflet
+
 ## Démarrer le projet :
 Il faut tout d'abord lancer le serveur avec la commande :
 ```bash
@@ -26,3 +28,17 @@ Ensuite connecter le client avec la commande :
 ```bash
 npm run serve
 ```
+
+Afin de pouvoir présenter la position de chaque restaurant sur une Map, nous avons utilisé Leaflet qui est un framework javascript.
+
+Pour installer Leaflet nous avons utilisé ces deux commandes : 
+
+
+```bash
+npm install --save leaflet
+```
+
+```bash
+npm install --save vue2-leaflet
+```
+
